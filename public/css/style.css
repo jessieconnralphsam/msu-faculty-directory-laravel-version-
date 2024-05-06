@@ -1,5 +1,52 @@
 body{
     background-color: #F5F7FA;
-    margin: 0;
-    padding: 0;
+}
+/* topbar */
+
+.bg-light-white{
+    background-color: #FFFFFF9C;
+}
+.bg-maroon{
+    background-color: #8F0A03;
+}
+.color-white{
+    color: #FFFF;
+}
+.login-cursor{
+    cursor: pointer;
+}
+.login-cursor:hover {
+    background-color: #FFBB38;
+    border-radius: 5px;
+    color: #FFFF;
+}
+.f-container {
+    margin-top: 58px;
+    position: relative;
+    background-image: url('../img/maxresdefault.png');
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    height: 256px;
+}
+.bg-f-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 256px;
+    margin-top: 58px;
+    background-color: #29292999;
+}
+
+.down-container{
+    margin-top: 70px;
+}
+
+.container-line {
+    width: 50px;
+    color: gold;
+    border: 2px solid #FFBB38;
+    background-color: gold;
+    margin-left: 0px;
 }

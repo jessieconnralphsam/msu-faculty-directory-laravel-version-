@@ -3,7 +3,7 @@
 ?>
 @extends('layout')
 
-@section('title', 'MSU FACULTY DIRECTORY')
+@section('title', 'Home')
 
 @section('content')
 <div class="container mt-3 mb-3">

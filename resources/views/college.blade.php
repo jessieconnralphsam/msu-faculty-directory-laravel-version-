@@ -50,7 +50,7 @@
                         @endif
 
                         <div class="col py-2">
-                            <div class="container py-2 bg-white rounded custom-container border" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+                            <div class="container py-2 bg-white rounded custom-container border" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-faculty-name="{{ $faculty->name }}">
                                 <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $faculty->college->college_name }}</strong></h6>
                                 <div class="container" style="display: flex; justify-content: center;">
@@ -73,7 +73,7 @@
                         <div class="modal-dialog modal-md modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-body"> 
-                                    <h1>Hello World</h1>
+                                    <h1 id="facultyNamePlaceholder"></h1>
                                 </div>
                             </div>
                         </div>

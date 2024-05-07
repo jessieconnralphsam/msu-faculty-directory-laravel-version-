@@ -1,10 +1,12 @@
 <div class="container">
     <div class="row">
         <div class="col-md-7">
-            <div class="input-group">
-                <input type="text" class="form-control" placeholder="Search name" aria-label="Recipient's username" aria-describedby="search-button" id="search-input">
-                <button class="btn maroon-button" type="button" id="search-button"><i class="fa fa-search color-white"></i></button>
-            </div>
+            <form action="{{ route('search') }}" method="GET" onsubmit="convertToUpperCase()">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search name" aria-label="Recipient's username" aria-describedby="search-button" id="search-input" name="search">
+                    <button class="btn maroon-button" type="submit" id="search-button"><i class="fa fa-search color-white"></i></button>
+                </div>
+            </form>
         </div>
         <div class="col-md-5">
             <div class="row">

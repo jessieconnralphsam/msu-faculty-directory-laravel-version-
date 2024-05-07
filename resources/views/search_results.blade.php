@@ -6,7 +6,7 @@
 <div class="container mt-3 mb-3">
     <div class="container rounded bg-white">
         <div class="px-3 py-3">
-            <strong id="colleges-text"><a href="/" class="text-gold">Home</a> / All Results ({{ $results->count() }})</strong> <br>
+            <strong><a href="/" class="text-gold">Home</a> / All Results ({{ $results->count() }})</strong><br>
             <div class="py-4">
                 <div class="row">
                     @foreach($results as $result)

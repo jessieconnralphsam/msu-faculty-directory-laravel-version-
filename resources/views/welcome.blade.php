@@ -9,7 +9,7 @@
 <div class="container mt-3 mb-3">
     <div class="container rounded bg-white">
         <div class="px-3 py-3">
-            <strong id="colleges-text">All Colleges ({{ Faculty::countDeans() }})</strong> <br>
+            <strong>All Colleges ({{ Faculty::countDeans() }})</strong> <br>
             <div class="py-4">
                 <div class="row">
                     @foreach(Faculty::where('dean', true)->get() as $faculty)

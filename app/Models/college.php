@@ -10,6 +10,7 @@ class College extends Model
     use HasFactory;
 
     protected $table = 'college';
+    protected $primaryKey = 'collegeid';
 
     protected $fillable = [
         'college_name',

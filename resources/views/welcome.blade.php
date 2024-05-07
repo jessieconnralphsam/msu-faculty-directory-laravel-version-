@@ -44,7 +44,7 @@
                             @default
                                 @php $deanText = 'Ba&A'; @endphp
                         @endswitch
-                        <div class="col py-2">
+                        <div class="col py-2" onclick="redirectToCollege({{ $faculty->college->collegeid }})">
                             <div class="container py-2 bg-white rounded custom-container border">
                                 <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $faculty->college->college_name }}</strong></h6>

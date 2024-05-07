@@ -76,7 +76,9 @@ body{
     box-shadow: 0 0 0 2px #8F0A03; 
 }
 
-
+.text-gold{
+    color: #FFBB38;
+}
 /*--------------------------------------------------------------
 # footer
 --------------------------------------------------------------*/
@@ -99,4 +101,10 @@ body{
     width: 240px;
     height: 450px;
     cursor: pointer;
+}
+/* 
+content */
+
+.text-maroon{
+    color: maroon;
 }

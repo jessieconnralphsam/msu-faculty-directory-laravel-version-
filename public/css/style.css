@@ -87,11 +87,16 @@ body{
     background-position: center;
     height: 47px;
   }
-  .footer-container{
+.footer-container{
     height: 47px;
     background-color: rgba(143, 10, 3, 0.8);
     box-shadow: 0px 4px 4px 0px #00000005;
-  }
-  .container-foot{
+}
+.container-foot{
     height: 47px;
-  }
+}
+.custom-container{
+    width: 240px;
+    height: 450px;
+    cursor: pointer;
+}

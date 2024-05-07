@@ -26,7 +26,7 @@
                             @case('College of Medicine')
                                 @php $deanText = 'COM'; @endphp
                                 @break
-                            @case('College of Business Administration and Accountancy')
+                            @case('College of Business Administration and Accountacy')
                                 @php $deanText = 'Ba&A'; @endphp
                                 @break
                             @case('College of Fisheries')
@@ -42,7 +42,7 @@
                                 @php $deanText = 'CoEd'; @endphp
                                 @break
                             @default
-                                @php $deanText = 'No Match'; @endphp
+                                @php $deanText = 'Ba&A'; @endphp
                         @endswitch
                         <div class="col py-2">
                             <div class="container py-2 bg-white rounded custom-container border">

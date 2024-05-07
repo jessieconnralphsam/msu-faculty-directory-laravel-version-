@@ -22,6 +22,11 @@ class Faculty extends Model
         return $this->belongsTo(College::class, 'collegeid', 'collegeid');
     }
 
+    public function department()
+    {
+        return $this->belongsTo(Department::class, 'departmentid', 'departmentid'); 
+    }
+
     public static function countDeans()
     {
         return self::where('dean', true)->count();

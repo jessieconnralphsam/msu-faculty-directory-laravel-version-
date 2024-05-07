@@ -20,40 +20,7 @@
                                     </div>
                                 </div>
                                 <h6 class="text-center"><strong>{{ $result->name }}</strong></h6>
-                                @php
-                                    switch($result->college->college_name) {
-                                        case 'College of Agriculture':
-                                            $deanText = 'COA';
-                                            break;
-                                        case 'College of Engineering':
-                                            $deanText = 'COE';
-                                            break;
-                                        case 'College of Social Sciences and Humanities':
-                                            $deanText = 'CSSH';
-                                            break;
-                                        case 'College of Medicine':
-                                            $deanText = 'COM';
-                                            break;
-                                        case 'College of Business Administration and Accountacy':
-                                            $deanText = 'Ba&A';
-                                            break;
-                                        case 'College of Fisheries':
-                                            $deanText = 'COF';
-                                            break;
-                                        case 'College of Natural Science and Mathematics':
-                                            $deanText = 'CNSM';
-                                            break;
-                                        case 'School of Graduate Studies':
-                                            $deanText = 'SGS';
-                                            break;
-                                        case 'College of Education':
-                                            $deanText = 'CoEd';
-                                            break;
-                                        default:
-                                            $deanText = 'Ba&A';
-                                    }
-                                @endphp
-                                <h6 class="text-center">Dean of {{ $deanText }}</h6>
+                                <h6 class="text-center">{{ $result->department->department_name }}</h6> <!-- Display department name -->
                             </div>
                         </div>
                     @endforeach

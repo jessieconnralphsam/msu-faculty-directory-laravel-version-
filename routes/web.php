@@ -12,6 +12,10 @@ Route::get('/college', function () {
     return view('college');
 });
 
+Route::get('/profile', function () {
+    return view('profile');
+});
+
 Route::get('/search', 'App\Http\Controllers\FacultyController@search')->name('search');
 
 

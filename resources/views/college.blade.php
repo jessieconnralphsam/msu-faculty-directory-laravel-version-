@@ -50,7 +50,7 @@
                         @endif
 
                         <div class="col py-2">
-                            <div class="container py-2 bg-white rounded custom-container border">
+                            <div class="container py-2 bg-white rounded custom-container border" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
                                 <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $faculty->college->college_name }}</strong></h6>
                                 <div class="container" style="display: flex; justify-content: center;">
@@ -68,6 +68,16 @@
                             </div>
                         </div>
                     @endforeach
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                        <div class="modal-dialog modal-md modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body"> 
+                                    <h1>Hello World</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

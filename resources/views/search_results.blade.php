@@ -10,7 +10,7 @@
             <div class="py-4">
                 <div class="row">
                     @foreach($results as $result)
-                        <div class="col py-2" onclick="redirectToCollege({{ $result->college->collegeid }})">
+                        <div class="col py-2" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
                             <div class="container py-2 bg-white rounded custom-container border">
                                 <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $result->college->college_name }}</strong></h6>
@@ -24,6 +24,16 @@
                             </div>
                         </div>
                     @endforeach
+                </div>
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+                    <div class="modal-dialog modal-md modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-body"> 
+                                <h1>Hello World</h1>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

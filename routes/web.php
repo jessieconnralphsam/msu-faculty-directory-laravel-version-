@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollegeController;
-
+use App\Http\Controllers\ProfileController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +20,5 @@ Route::get('/search', 'App\Http\Controllers\FacultyController@search')->name('se
 
 
 Route::get('/college/{collegeId}', [CollegeController::class, 'show'])->name('college.show');
+
+Route::get('/profile/{profileId}', [ProfileController::class, 'show'])->name('profile.show');

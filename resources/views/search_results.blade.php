@@ -10,7 +10,8 @@
             <div class="py-4">
                 <div class="row">
                     @foreach($results as $result)
-                        <div class="col py-2" data-bs-toggle="modal" data-bs-target="#exampleModalToggle">
+                        <div class="col py-2" data-bs-toggle="modal" data-bs-target="#exampleModalToggle"
+                        data-faculty-info='{{ json_encode(["name" => $result->name, "photo" => asset("img/660f6e5997de4_def.jpg"), "id" => $result->facultyid]) }}'>
                             <div class="container py-2 bg-white rounded custom-container border">
                                 <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $result->college->college_name }}</strong></h6>
@@ -30,7 +31,7 @@
                     <div class="modal-dialog modal-md modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-body"> 
-                                <h1>Hello World</h1>
+                                <h1 id="faculty"></h1>
                             </div>
                         </div>
                     </div>

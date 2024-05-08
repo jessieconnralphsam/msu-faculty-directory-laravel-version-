@@ -1,5 +1,5 @@
 <?php
-    use App\Models\Faculty;
+    use App\Models\Profile;
 ?>
 @extends('layout')
 
@@ -28,7 +28,7 @@
                     <div class="col col-12 col-md-8 mt-2">
                         <div class="container">
                             <div class="mb-2">
-                                <h2 class="profile-text" style="color: #8F0A03;"><strong>name here</strong></h2>
+                                <h2 class="profile-text" style="color: #8F0A03;"><strong>{{ $profile->name }}</strong></h2>
                                 <h3 class="mt-0"><span class="fst-normal">Sample date here</span></h3>
                                 <p class="fw-lighter fs-sm mt-2">[Dr.] [Name] is an [Rank] and currently the [chairperson] in the [Department]. [She] publishes research about lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum quam lorem, sed scelerisque massa venenatis id. Nulla congue elementum augue, quis gravida massa fermentum quis.</p>
                                 <h3 class="fw-bold mt-4">Specialization</h3>

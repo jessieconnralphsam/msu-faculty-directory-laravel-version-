@@ -38,6 +38,12 @@ rankCheckbox.addEventListener('change', function() {
     }
 });
 
+
+var deansCount = document.getElementById('permaCount').dataset.count;
+var casCount = document.getElementById('casCount').dataset.count;
+var joCount = document.getElementById('joCount').dataset.count;
+
+
 //charts
 (function () {
     'use strict';
@@ -66,7 +72,7 @@ rankCheckbox.addEventListener('change', function() {
             series: [
                 {
                     name: 'Total Number of Faculty',
-                    data: [4, 8, 10]
+                    data: [deansCount, casCount, joCount]
                 }
             ],
             chart: {

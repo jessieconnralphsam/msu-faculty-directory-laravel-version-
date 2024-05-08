@@ -9,6 +9,13 @@
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
 </head>
 <body>
+    <?php
+        use App\Models\Faculty;
+    ?>
+    <!-- passing data from model to javascript [data for charts] -->
+    <div id="permaCount" data-count="{{ Faculty::countPermanentfaculty() }}" style="display: none;"></div>
+    <div id="casCount" data-count="{{ Faculty::countCasualfaculty() }}" style="display: none;"></div>
+    <div id="joCount" data-count="{{ Faculty::countJoborderfaculty() }}" style="display: none;"></div>
     @include('includes.top_bar')
     @include('includes.navigation')
     @include('includes.search')

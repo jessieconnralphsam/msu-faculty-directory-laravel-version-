@@ -16,7 +16,7 @@
                             <strong>Show Status Statistic</strong>
                         </div>
                         <div class="col-2">
-                            <input class="form-check-input" type="checkbox" value="" aria-label="">
+                            <input id="show-status-checkbox" class="form-check-input" type="checkbox" value="" aria-label="">
                         </div>
                     </div>
                 </div>
@@ -26,7 +26,7 @@
                             <strong>Show Rank Statistic</strong>
                         </div>
                         <div class="col col-2">
-                            <input class="form-check-input" type="checkbox" value="" aria-label="">
+                            <input id="show-rank-checkbox" class="form-check-input" type="checkbox" value="" aria-label="">
                         </div>
                     </div>
                 </div>

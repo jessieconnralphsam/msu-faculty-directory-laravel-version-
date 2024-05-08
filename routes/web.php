@@ -20,8 +20,3 @@ Route::get('/search', 'App\Http\Controllers\FacultyController@search')->name('se
 
 
 Route::get('/college/{collegeId}', [CollegeController::class, 'show'])->name('college.show');
-
-
-
-
-

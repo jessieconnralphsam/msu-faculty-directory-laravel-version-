@@ -50,7 +50,8 @@
                         @endif
 
                         <div class="col py-2">
-                            <div class="container py-2 bg-white rounded custom-container border" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" data-faculty-name="{{ $faculty->name }}">
+                            <div class="container py-2 bg-white rounded custom-container border" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" 
+                                data-faculty-info='{{ json_encode(["name" => $faculty->name, "photo" => asset("img/660f6e5997de4_def.jpg")]) }}'>
                                 <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $faculty->college->college_name }}</strong></h6>
                                 <div class="container" style="display: flex; justify-content: center;">
@@ -58,8 +59,6 @@
                                         <hr style="width: 100%; border: 1px solid;">
                                     </div>
                                 </div>
-                                <!-- change name format//
-                                name format: {{ $faculty->last_name }}, {{ $faculty->first_name }}{{ $faculty->middle_name }}{{ $faculty->suffix }} -->
                                 <h6 class="text-center"><strong>{{ $faculty->name }}</strong></h6> 
                                 @php
                                     $rankTitle = $rankMap[$faculty->rank] ?? 'Unknown Rank';
@@ -73,7 +72,7 @@
                         <div class="modal-dialog modal-md modal-dialog-centered">
                             <div class="modal-content">
                                 <div class="modal-body"> 
-                                    <h1 id="facultyNamePlaceholder"></h1>
+                                    <h1 id="faculty"></h1>
                                 </div>
                             </div>
                         </div>

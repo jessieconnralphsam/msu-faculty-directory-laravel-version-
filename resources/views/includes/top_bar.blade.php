@@ -4,7 +4,7 @@
             <img src="{{ asset('img/msu_logo.png') }}" alt="Logo" width="44" height="44">
         </div>
         <div class="d-flex align-items-center login-cursor">
-            <button type="button" class="btn bg-maroon btn-md color-white"><i class="fa fa-user color-white" aria-hidden="true"></i> Login</button>
+            <button type="button" class="btn bg-maroon btn-md color-white" onclick="login()"><i class="fa fa-user color-white" aria-hidden="true"></i> Login</button>
         </div>
     </div>
 </div>

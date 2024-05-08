@@ -6,3 +6,5 @@
 
 env: encrypted
 
+php artisan migrate: migrate table for session 
+

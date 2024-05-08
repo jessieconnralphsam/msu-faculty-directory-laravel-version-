@@ -1,17 +1,20 @@
+//convert search input to upper case
 function convertToUpperCase() {
     var searchInput = document.getElementById('search-input');
     searchInput.value = searchInput.value.toUpperCase();
 }
 
-
+//college page redirect with college id
 function redirectToCollege(collegeId) {
     window.location.href = "/college/" + collegeId;
 }
 
+//login redirect
 function login() {
     window.location.href = "https://faculty.msugensan.edu.ph";
 }
 
+//colege page modal
 document.addEventListener('DOMContentLoaded', function () {
     const modals = document.querySelectorAll('.modal');
 
@@ -22,6 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const modalBody = modal.querySelector('.modal-body');
 
             const facultyName = facultyInfo.name || 'Unknown Name';
+            const noPhoto = facultyInfo.no_photo;
             const facultyPhoto = facultyInfo.photo;
             const rankFullName = facultyInfo.rank || 'Unknown Rank';
             const departmentNewName = facultyInfo.department || 'Unknown Department';
@@ -64,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+//result modal
 document.addEventListener('DOMContentLoaded', function () {
     const modals = document.querySelectorAll('.modal');
 
@@ -74,6 +79,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const modalBody = modal.querySelector('.modal-body');
 
             const facultyName = facultyInfo.name || 'Unknown Name';
+            const noPhoto = facultyInfo.no_photo;
             const facultyPhoto = facultyInfo.photo;
             const rankFullName = facultyInfo.rank || 'Unknown Rank';
             const departmentNewName = facultyInfo.department || 'Unknown Department';

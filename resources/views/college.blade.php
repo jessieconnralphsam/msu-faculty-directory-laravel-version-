@@ -50,9 +50,12 @@
                         @endif
 
                         <div class="col py-2">
+                            @php
+                                $photoPath = str_replace('\\', '/', $faculty->photo);
+                            @endphp
                             <div class="container py-2 bg-white rounded custom-container border" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" 
-                                data-faculty-info='{{ json_encode(["name" => $faculty->name, "photo" => asset("img/660f6e5997de4_def.jpg"), "id" => $faculty->facultyid]) }}'>
-                                <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
+                                data-faculty-info='{{ json_encode(["name" => $faculty->name, "no_photo" => asset("img/660f6e5997de4_def.jpg"), "photo" => asset($photoPath), "id" => $faculty->facultyid]) }}'>
+                                <img src="{{ $faculty->photo ? asset($photoPath) : asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $faculty->college->college_name }}</strong></h6>
                                 <div class="container" style="display: flex; justify-content: center;">
                                     <div style="width: 30%;">

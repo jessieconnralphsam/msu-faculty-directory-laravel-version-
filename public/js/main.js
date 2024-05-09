@@ -252,12 +252,47 @@ document.addEventListener('DOMContentLoaded', function () {
             const facultyInfo = JSON.parse(button.closest('.container').dataset.facultyInfo);
             const modalBody = modal.querySelector('.modal-body');
             const facultyName = facultyInfo.name || 'Unknown Name';
+            const college = facultyInfo.college || 'No data';
+
+            switch (college) {
+                case 'College of Agriculture':
+                    var collegeName = 'COA';
+                    break;
+                case 'College of Engineering':
+                    var collegeName = 'COE';
+                    break;
+                case 'College of Social Sciences and Humanities':
+                    var collegeName = 'CSSH';
+                    break;
+                case 'College of Medicine':
+                    var collegeName = 'COM';
+                    break;
+                case 'College of Business Administration and Accountacy':
+                    var collegeName = 'Ba&A';
+                    break;
+                case 'College of Fisheries':
+                    var collegeName = 'COF';
+                    break;
+                case 'College of Natural Science and Mathematics':
+                    var collegeName = 'CNSM';
+                    break;
+                case 'School of Graduate Studies':
+                    var collegeName = 'SGS';
+                    break;
+                case 'College of Education':
+                    var collegeName = 'CoEd';
+                    break;
+                default:
+                    var collegeName = 'Ba&A';
+                    break;
+            }
 
             const facultyPhoto = facultyInfo.photo;
             const noPhoto = facultyInfo.no_photo;
 
-            const departmentNewName = facultyInfo.department || 'Unknown Department';
-            const NewSpecializations = facultyInfo.specializations || 'No Data';
+            const departmentNewName = facultyInfo.department || 'No data';
+            const education = facultyInfo.education || 'No data';
+            const NewSpecializations = facultyInfo.specialization || 'No Data';
             const id = facultyInfo.id;
             const rank = facultyInfo.rank || 'Unkown Rank';
             modalBody.innerHTML = `
@@ -283,12 +318,12 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="col custom-column">
                             <div class="container-custom">
                                 <h3 class="maroontext"><strong>${facultyName}</strong></h3>
-                                <h5 class="mt-0"><span class="modaltext-two"><strong>${rank}</strong></span><span class="fw-lighter modaltext-two">, ${departmentNewName}</span></h5>
+                                <h5 class="mt-0"><span class="modaltext-two"><strong>${collegeName}</strong></span><span class="fw-lighter modaltext-two">, ${departmentNewName}</span></h5>
                                 <hr>
 
                                 <!-- change data when cleansing done (data separate with ;) -->
 
-                                <h5 class="modaltext-two mt-0"><strong>Highest Educational Attainment:</strong> ${NewSpecializations}<span class="modalspan"></span></h5>
+                                <h5 class="modaltext-two mt-0"><strong>Highest Educational Attainment:</strong> ${education}<span class="modalspan"></span></h5>
                                 <h5 class="modaltext-two mt-0"><strong>Specializations:</strong><span class="modalspan"> ${NewSpecializations}</span></h5>
                             </div>
                         </div>

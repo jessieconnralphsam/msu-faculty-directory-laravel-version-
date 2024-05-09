@@ -56,12 +56,14 @@
                             @endphp
                             <div class="container py-2 bg-white rounded custom-container border" data-bs-toggle="modal" data-bs-target="#exampleModalToggle" 
                                 data-faculty-info='{{ json_encode(["name" => $faculty->name,
-                                                     "no_photo" => asset($photoPath), 
-                                                     "photo" => asset($photoPath), 
-                                                     "id" => $faculty->facultyid,
-                                                     "rank" => $rankTitle,
-                                                     "department" => $faculty->department->department_name
-                                                     ])}}'>
+                                                                   "department" => $faculty->department->department_name,
+                                                                   "college" => $faculty->college->college_name,
+                                                                   "specialization" => $faculty->specialization,
+                                                                   "no_photo" => asset($photoPath), 
+                                                                   "photo" => asset($photoPath), 
+                                                                   "id" => $faculty->facultyid,
+                                                                   "rank" => $rankTitle,
+                                                                   ])}}'>
                                 <img src="{{ $faculty->photo ? asset($photoPath) : asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $faculty->college->college_name }}</strong></h6>
                                 <div class="container" style="display: flex; justify-content: center;">

@@ -86,4 +86,9 @@ class Faculty extends Model
     }
 
 
+    //find data base on [email]
+    public static function findByEmail($email)
+    {
+        return self::where('email', $email)->first();
+    }
 }

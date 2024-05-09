@@ -57,7 +57,6 @@ class Faculty extends Model
     }
 
     //count faculty rank
-
     public static function countRank()
     {
         $profRanks = $astproRanks = $asoproRanks = $instRanks = $lectRanks = 0;

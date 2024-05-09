@@ -17,7 +17,9 @@ Route::get('/profile', function () {
     return view('profile');
 });
 
-//temporary only [manual set email]
+//temporary only! [manual set email]
+//session from the [faculty.msugensan.edu.ph] login
+//maaccess ni sya dapat base sa session from [faculty.msugensan.edu.ph]
 Route::get('/profile-edit', function () {
     $email = 'jose.trillo@msugensan.edu.ph'; 
 

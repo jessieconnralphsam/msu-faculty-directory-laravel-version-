@@ -17,7 +17,6 @@
     <div id="permaCount" data-count="{{ Faculty::countPermanentfaculty() }}" style="display: none;"></div>
     <div id="casCount" data-count="{{ Faculty::countCasualfaculty() }}" style="display: none;"></div>
     <div id="joCount" data-count="{{ Faculty::countJoborderfaculty() }}" style="display: none;"></div>
-
     <div id="profCount" data-count="{{ $rankCounts['profRanks'] }}" style="display: none;"></div>
     <div id="astproCount" data-count="{{ $rankCounts['astproRanks'] }}" style="display: none;"></div>
     <div id="asoproCount" data-count="{{ $rankCounts['asoproRanks'] }}" style="display: none;"></div>
@@ -30,6 +29,7 @@
     @include('includes.chart')
     @yield('content')
     @include('includes.footer')
+    
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="{{ asset('js/main.js') }}"></script>

@@ -14,7 +14,13 @@
                             $photoPath = str_replace('\\', '/', $result->photo);
                         @endphp
                         <div class="col py-2" data-bs-toggle="modal" data-bs-target="#exampleModalToggle"
-                        data-faculty-info='{{ json_encode(["name" => $result->name, "no_photo" => asset("img/660f6e5997de4_def.jpg"), "photo" => asset($photoPath), "id" => $result->facultyid]) }}'>
+                        data-faculty-info='{{ json_encode(["name" => $result->name,
+                                                           "department" => $result->department->department_name,
+                                                           "college" => $result->college->college_name,
+                                                           "specialization" => $result->specialization,
+                                                           "no_photo" => asset("img/660f6e5997de4_def.jpg"),
+                                                           "photo" => asset($photoPath),
+                                                           "id" => $result->facultyid]) }}'>
                             <div class="container py-2 bg-white rounded custom-container border">
                                 <img src="{{ $result->photo ? asset($photoPath) : asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">
                                 <h6 class="text-center mt-2 text-maroon"><strong>{{ $result->college->college_name }}</strong></h6>

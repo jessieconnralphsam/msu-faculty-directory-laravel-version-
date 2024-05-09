@@ -56,4 +56,34 @@ class Faculty extends Model
         return self::where('status', 'joborder') ->count();
     }
 
+    //count faculty rank
+
+    public static function countRank()
+    {
+        $profRanks = $astproRanks = $asoproRanks = $instRanks = $lectRanks = 0;
+
+        $faculties = self::all();
+
+        foreach ($faculties as $faculty) {
+            if (strpos($faculty->rank, 'PROF') === 0) {
+                $profRanks++;
+            }
+            if (strpos($faculty->rank, 'ASTPRO') === 0) {
+                $astproRanks++;
+            }
+            if (strpos($faculty->rank, 'ASOPRO') === 0) {
+                $asoproRanks++;
+            }
+            if (strpos($faculty->rank, 'INST') === 0) {
+                $instRanks++;
+            }
+            if (strpos($faculty->rank, 'LECT') === 0) {
+                $lectRanks++;
+            }
+        }
+
+        return compact('profRanks', 'astproRanks', 'asoproRanks', 'instRanks', 'lectRanks');
+    }
+
+
 }

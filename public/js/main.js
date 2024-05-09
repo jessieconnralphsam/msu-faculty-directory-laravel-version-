@@ -30,6 +30,7 @@ checkbox.addEventListener('change', function() {
 const rankCheckbox = document.getElementById('show-rank-checkbox');
 const rankContainer = document.getElementById('rank-container');
 
+
 rankCheckbox.addEventListener('change', function() {
     if (this.checked) {
         rankContainer.style.display = 'block';
@@ -38,11 +39,29 @@ rankCheckbox.addEventListener('change', function() {
     }
 });
 
-
-var deansCount = document.getElementById('permaCount').dataset.count;
+//status count
+var permaCount = document.getElementById('permaCount').dataset.count;
 var casCount = document.getElementById('casCount').dataset.count;
 var joCount = document.getElementById('joCount').dataset.count;
 
+// rank counts
+var profCount = document.getElementById('profCount').dataset.count;
+var astproCount = document.getElementById('astproCount').dataset.count;
+var asoproCount = document.getElementById('asoproCount').dataset.count;
+var instCount = document.getElementById('instCount').dataset.count;
+var lectCount = document.getElementById('lectCount').dataset.count;
+
+
+
+// test if tama ba ang value
+// console.log('permanent Count:', permaCount);
+// console.log('Casual Count:', casCount);
+// console.log('Job order Count:', joCount);
+// console.log('Prof Ranks:', profCount);
+// console.log('Astpro Ranks:', astproCount);
+// console.log('Asopro Ranks:', asoproCount);
+// console.log('Inst Ranks:', instCount);
+// console.log('Lect Ranks:', lectCount);
 
 //charts
 (function () {
@@ -72,7 +91,7 @@ var joCount = document.getElementById('joCount').dataset.count;
             series: [
                 {
                     name: 'Total Number of Faculty',
-                    data: [deansCount, casCount, joCount]
+                    data: [permaCount, casCount, joCount]
                 }
             ],
             chart: {
@@ -178,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var options = {
         series: [{
         name: 'Total',
-        data: [2,2,2,2,2],
+        data: [profCount,astproCount,asoproCount,instCount,lectCount],
         color: '#16DBCC',
       }],
         chart: {

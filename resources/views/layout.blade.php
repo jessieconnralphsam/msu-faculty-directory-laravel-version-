@@ -11,11 +11,19 @@
 <body>
     <?php
         use App\Models\Faculty;
+        $rankCounts = Faculty::countRank();
     ?>
     <!-- passing data from model to javascript [data for charts] -->
     <div id="permaCount" data-count="{{ Faculty::countPermanentfaculty() }}" style="display: none;"></div>
     <div id="casCount" data-count="{{ Faculty::countCasualfaculty() }}" style="display: none;"></div>
     <div id="joCount" data-count="{{ Faculty::countJoborderfaculty() }}" style="display: none;"></div>
+
+    <div id="profCount" data-count="{{ $rankCounts['profRanks'] }}" style="display: none;"></div>
+    <div id="astproCount" data-count="{{ $rankCounts['astproRanks'] }}" style="display: none;"></div>
+    <div id="asoproCount" data-count="{{ $rankCounts['asoproRanks'] }}" style="display: none;"></div>
+    <div id="instCount" data-count="{{ $rankCounts['instRanks'] }}" style="display: none;"></div>
+    <div id="lectCount" data-count="{{ $rankCounts['lectRanks'] }}" style="display: none;"></div>
+    
     @include('includes.top_bar')
     @include('includes.navigation')
     @include('includes.search')

@@ -18,11 +18,15 @@ class FacultyUpdateController extends Controller
     {
         $faculty = Faculty::findOrFail($id);
 
-        // Validate picture
+        // Validate name and optionally validate photo
         $request->validate([
             'name' => 'required',
-            'photo' => 'image|mimes:jpeg|max:2048', // Adjust max file size as needed
+            'photo' => 'nullable|image|mimes:jpeg|max:2048', // Allow photo to be nullable
         ]);
+
+        $data = [
+            'name' => $request->input('name'),
+        ];
 
         if ($request->hasFile('photo')) {
             $photo = $request->file('photo');
@@ -30,26 +34,20 @@ class FacultyUpdateController extends Controller
             $filename = 'faculty_' . time() . '.' . $photo->getClientOriginalExtension();
 
             // Move the uploaded file to the public/photos directory
-            //mas safe if sa storage is save ang files [good practice]
             $photo->move(public_path('assets/img/'), $filename);
 
             // Get the path relative to the public directory
             $photoPath = 'assets/img/' . $filename;
 
-            // Compress ang image
-            $this->compressImage(public_path($photoPath), public_path($photoPath), 60); // 60 is the quality percentage [pwede pa pababan]
+            // Compress the image
+            $this->compressImage(public_path($photoPath), public_path($photoPath), 60); // 60 is the quality percentage
 
-            $data = [
-                'name' => $request->input('name'),
-                'photo' => $photoPath,
-            ];
-
-            $faculty->update($data);
-
-            return redirect()->back()->with('success', 'Faculty updated successfully.');
+            $data['photo'] = $photoPath;
         }
 
-        return redirect()->back()->with('error', 'No photo uploaded.');
+        $faculty->update($data);
+
+        return redirect()->back()->with('success', 'Faculty updated successfully.');
     }
 
     private function compressImage($source, $destination, $quality)
@@ -59,8 +57,7 @@ class FacultyUpdateController extends Controller
         if ($info['mime'] == 'image/jpeg') {
             $image = imagecreatefromjpeg($source);
             imagejpeg($image, $destination, $quality);
-        }
-        elseif ($info['mime'] == 'image/png') {
+        } elseif ($info['mime'] == 'image/png') {
             $image = imagecreatefrompng($source);
             imagepng($image, $destination, round(9 * $quality / 100));
         }

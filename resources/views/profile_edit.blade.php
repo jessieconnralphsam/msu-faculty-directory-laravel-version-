@@ -11,14 +11,26 @@
     @endphp
 
     @if ($faculty)
-        <!-- <h1 class="mt-5">{{ $faculty->name }}</h1>
-        <h1>{{ $faculty->rank }}</h1>
-        <h1>{{ $faculty-> college -> college_name }}</h1> -->
         <div class="container mt-2">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-2">
                 <div class="col col-md-4 mt-3">
-                    <div class="container rounded bg-white shadow-sm">
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusamus fugiat saepe culpa illo repudiandae ratione dolorum nisi dolorem ut iure vero illum veniam quam neque sed, deserunt odio officia dicta! Repellendus dicta delectus eos labore perferendis necessitatibus illo modi aliquam magni, quod hic saepe repudiandae numquam voluptatibus blanditiis aliquid nam.
+                    <div class="container rounded bg-white shadow-sm text-center">
+                        <div class="row mb-2">
+                            <div class="col mt-2">
+                                <h5>Edit Profile</h5>
+                            </div>
+                            <div class="col mt-2">
+                                <i class="fa-regular fa-pen-to-square fa-lg"></i>
+                            </div>
+                        </div>
+                        <hr>
+                        <img src="{{ $faculty->photo }}" class="img-fluid-profile rounded mx-auto d-block" alt="...">
+                        <h3 class="text-center text-maroon mt-2 mb-2">{{ $faculty->name }}</h3>
+                        <div class="container">
+                            <small class="text-center mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $faculty->email }}</small><br>
+                            <small class="text-center mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $faculty->department->department_name }}</small><br>
+                            <small class="text-center mt-2 mb-4"><i class="fa-solid fa-building-columns"></i> {{ $faculty->college->college_name }}</small><br>
+                        </div>
                     </div>
                 </div>
                 <div class="col col-md-8 mt-3 col-md-offset-2">

@@ -192,3 +192,9 @@ content */
     line-height: 0;
 }
 
+/* profile-edit */
+
+.img-fluid-profile {
+    height: 250px;
+    width: auto;
+}

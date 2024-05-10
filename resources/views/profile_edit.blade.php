@@ -54,7 +54,6 @@
                         <h3 class="text-center text-maroon mt-2 mb-2">{{ $faculty->name }}</h3>
                         <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$faculty->rank]}}</p>
                         <p class="text-center text-maroon mt-2 mb-2">{{ $faculty->status }}</p>
-                        <!-- <p class="text-center text-maroon mt-2 mb-2">{{ $faculty->photo }}</p> -->
                         <div class="container">
                             <small class="text-center mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $faculty->email }}</small><br>
                             <small class="text-center mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $faculty->department->department_name }}</small><br>
@@ -79,7 +78,8 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="photo" class="col-form-label"><strong>Photo:</strong> (jpg only)</label>
-                                        <input type="file" accept="image/jpeg" class="form-control" id="photo">
+                                        <input type="file" accept="image/jpeg" class="form-control" id="photo" name="photo">
+
                                     </div>
                                     <div class="mb-3">
                                         <label for="email" class="col-form-label"><strong>Email:</strong></label>

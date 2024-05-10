@@ -6,5 +6,7 @@
 
 env: encrypted
 
-php artisan migrate: migrate table for session 
+php artisan migrate: migrate [table for session]
+php artisan storage:link [use photo in storage]
+
 

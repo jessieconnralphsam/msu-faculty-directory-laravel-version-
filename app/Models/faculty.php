@@ -5,12 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+
 class Faculty extends Model
 {
     use HasFactory;
 
     protected $table = 'faculty';
-
+    protected $primaryKey = 'facultyid';
+    public $timestamps = false;
     protected $fillable = [
         'facultyid', 'name', 'collegeid', 'dean', 'departmentid', 'status', 'rank', 'email',
         'google_scholar_link', 'specialization', 'research', 'photo', 'education',

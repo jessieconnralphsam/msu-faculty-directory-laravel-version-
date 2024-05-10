@@ -198,3 +198,7 @@ content */
     height: 250px;
     width: auto;
 }
+
+.icon-cursor{
+    cursor: pointer;
+}

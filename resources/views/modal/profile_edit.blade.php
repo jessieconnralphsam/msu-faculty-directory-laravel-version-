@@ -29,18 +29,6 @@
                         <input type="text" class="form-control" id="scholar" name="scholar" value="{{ $faculty->google_scholar_link }}">
                     </div>
                     <div class="mb-3">
-                        <label for="suffix" class="col-form-label"><strong>Specialization:</strong></label>
-                        <input type="text" class="form-control" id="specialization" name="specialization" value="{{ $faculty->specialization }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="suffix" class="col-form-label"><strong>Research Interest:</strong></label>
-                        <input type="text" class="form-control" id="research" name="research" value="{{ $faculty->specialization }}">
-                    </div>
-                    <div class="mb-3">
-                        <label for="suffix" class="col-form-label"><strong>Google Scholar Link:</strong></label>
-                        <input type="text" class="form-control" id="scholar" name="scholar" value="{{ $faculty->google_scholar_link }}">
-                    </div>
-                    <div class="mb-3">
                         <label for="photo" class="col-form-label"><strong>Photo:</strong></label>
                         <input type="file" accept="image/jpeg" class="form-control" id="photo" name="photo">
                     </div>

@@ -53,14 +53,16 @@
                         <img src="{{ $faculty->photo }}" class="img-fluid-profile rounded mx-auto d-block" alt="...">
                         <h3 class="text-center text-maroon mt-2 mb-2">{{ $faculty->last_name }}, {{ $faculty->first_name }} {{ $faculty->suffix }} {{ $faculty->middle_name }}</h3>
                         <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$faculty->rank]}}</p>
+                        <p class="text-maroon">highest educational attainment</p>
                         <p class="text-center text-maroon mt-2 mb-2">{{ $faculty->status }}</p>
                         <div class="container">
-                            <small class="text-center mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $faculty->email }}</small><br>
-                            <small class="text-center mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $faculty->department->department_name }}</small><br>
-                            <small class="text-center mt-4 mb-5"><i class="fa-solid fa-building-columns"></i> {{ $faculty->college->college_name }}</small><br>
+                            <small class="mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $faculty->email }}</small><br>
+                            <small class="mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $faculty->department->department_name }}</small><br>
+                            <small class="mt-4 mb-5"><i class="fa-solid fa-building-columns"></i> {{ $faculty->college->college_name }}</small><br>
                             <small class="mt-3 mb-5"><strong>Google Scholar Link:</strong> No Data</small><br>
                             <small class="mt-3 mb-5"><strong>Specialization:</strong> No Data</small><br>
                             <small class="mt-3 mb-5"><strong>Research Interest:</strong> No Data</small><br>
+                            <hr class="text-white">
                         </div>
                     </div>
                 </div>
@@ -70,17 +72,116 @@
                     <div class="row">
                         <div class="col col-12 col-md-12">
                             <div class="container rounded bg-white shadow-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab rem natus ipsum quisquam, error numquam, quas suscipit dolor eum corporis, sapiente cumque! Beatae facilis nam harum earum sapiente enim. Nulla nesciunt dolore quis magni placeat vel, dolorum vero adipisci ipsa libero ipsum. Suscipit amet iste sint soluta optio recusandae, commodi rem voluptates, accusantium, reiciendis iure aspernatur consectetur ut placeat dolore! Repellendus, vitae. Vero ipsum voluptates similique, architecto obcaecati officiis repudiandae velit quia dolor in quae ab laboriosam, sapiente ipsam! Magni itaque doloribus esse asperiores saepe quas, tempore quaerat nostrum! Eos commodi nobis laboriosam totam quis fugit tenetur repudiandae, iusto nihil!
+                                <div class="row">
+                                    <div class="col-8 col-md-10">
+                                        <h3 class="mt-3"><strong>Research Interest</strong></h3>
+                                    </div>
+                                    <div class="mt-3 col-2 col-1 col-md-1">
+                                    </div>
+                                    <div class="col-1 col-md-1">
+                                        <i class="fa fa-plus-square fa-2x mt-3" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <ol class="list-group list-group-numbered">
+                                    <li class="list-group-item">A list item</li>
+                                    <li class="list-group-item">A list item</li>
+                                    <li class="list-group-item">A list item</li>
+                                </ol>
+                                <hr class="text-white">
+                            </div>
+                        </div>
+                        <div class="col col-12 col-md-12">
+                            <div class="container rounded bg-white shadow-sm">
+                                <div class="row">
+                                    <div class="col-8 col-md-10">
+                                        <h3 class="mt-3"><strong>Education</strong></h3>
+                                    </div>
+                                    <div class="mt-3 col-2 col-1 col-md-1">
+                                    </div>
+                                    <div class="col-1 col-md-1">
+                                        <i class="fa fa-plus-square fa-2x mt-3" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <ol class="list-group list-group-numbered">
+                                    <li class="list-group-item">A list item</li>
+                                    <li class="list-group-item">A list item</li>
+                                    <li class="list-group-item">A list item</li>
+                                </ol>
+                                <hr class="text-white">
                             </div>
                         </div>
                         <div class="col col-12 col-md-12 mt-3">
                             <div class="container rounded bg-white shadow-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, impedit quibusdam maiores at suscipit illum necessitatibus? Rem doloribus in consequuntur quam libero quisquam numquam officia hic aut quas impedit aliquid incidunt, officiis iure architecto maxime quae veniam sunt nisi modi eius labore quos eligendi pariatur! Reprehenderit ducimus cum, quasi quas vero sint blanditiis voluptate exercitationem voluptates pariatur impedit atque sapiente molestias nulla quos nam explicabo reiciendis ad natus, adipisci magnam similique officiis in beatae. Odit, id adipisci. Vel aperiam nemo est hic minus praesentium expedita eligendi? Quidem libero non molestiae facilis. Nisi suscipit itaque cupiditate eum, nam ipsum minima et.
+                                <div class="row">
+                                    <div class="col-8 col-md-10">
+                                        <h3 class="mt-3"><strong>Specialization</strong></h3>
+                                    </div>
+                                    <div class="mt-3 col-2 col-1 col-md-1">
+                                    </div>
+                                    <div class="col-1 col-md-1">
+                                        <i class="fa fa-plus-square fa-2x mt-3" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <ol class="list-group list-group-numbered">
+                                    <li class="list-group-item">A list item</li>
+                                    <li class="list-group-item">A list item</li>
+                                    <li class="list-group-item">A list item</li>
+                                </ol>
+                                <hr class="text-white">
                             </div>
                         </div>
-                        <div class="col col-12 col-md-12 mt-3 mb-5">
+                        <div class="col col-12 col-md-12 mt-3">
                             <div class="container rounded bg-white shadow-sm">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil, impedit quibusdam maiores at suscipit illum necessitatibus? Rem doloribus in consequuntur quam libero quisquam numquam officia hic aut quas impedit aliquid incidunt, officiis iure architecto maxime quae veniam sunt nisi modi eius labore quos eligendi pariatur! Reprehenderit ducimus cum, quasi quas vero sint blanditiis voluptate exercitationem voluptates pariatur impedit atque sapiente molestias nulla quos nam explicabo reiciendis ad natus, adipisci magnam similique officiis in beatae. Odit, id adipisci. Vel aperiam nemo est hic minus praesentium expedita eligendi? Quidem libero non molestiae facilis. Nisi suscipit itaque cupiditate eum, nam ipsum minima et.
+                                <div class="row">
+                                    <div class="col-8 col-md-10">
+                                        <h3 class="mt-3"><strong>Additional Load</strong></h3>
+                                    </div>
+                                    <div class="mt-3 col-2 col-1 col-md-1">
+                                        
+                                    </div>
+                                    <div class="col-1 col-md-1">
+                                        <i class="fa fa-plus-square fa-2x mt-3" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                                <hr>
+                                <table class="table mb-3">
+                                    <thead>
+                                        <tr>
+                                            <th>Title</th>
+                                            <th>Equiv. Load</th>
+                                            <th>From</th>
+                                            <th>To</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>HP Lab Supervisor</td>
+                                            <td class="text-center">3</td>
+                                            <td>Feb-01-2024</td>
+                                            <td>Feb-01-2028</td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col"><i class="fa fa-trash" aria-hidden="true"></i></div>
+                                                    <div class="col"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>HP Lab Supervisor</td>
+                                            <td class="text-center">3</td>
+                                            <td>Feb-01-2024</td>
+                                            <td>Feb-01-2028</td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="col"><i class="fa fa-trash" aria-hidden="true"></i></div>
+                                                    <div class="col"><i class="fa fa-pencil" aria-hidden="true"></i></div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <hr class="text-white">
                             </div>
                         </div>
                     </div>

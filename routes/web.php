@@ -40,3 +40,6 @@ Route::get('/college/{collegeId}', [CollegeController::class, 'show'])->name('co
 Route::get('/profile/{profileId}', [ProfileController::class, 'show'])->name('profile.show');
 
 Route::post('/update-faculty/{id}', 'App\Http\Controllers\FacultyUpdateController@update')->name('update.faculty');
+
+Route::post('/update-research/{id}', 'App\Http\Controllers\FacultyResearchController@updateResearch')->name('update.research');
+

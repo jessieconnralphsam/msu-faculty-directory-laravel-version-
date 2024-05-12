@@ -89,34 +89,42 @@
                                     </div>
                                 </div>
                                 <ol class="list-group list-group-numbered">
-                                    <li class="list-group-item">A list item</li>
-                                    <li class="list-group-item">A list item</li>
-                                    <li class="list-group-item">A list item</li>
+                                    @php
+                                        $researchItems = explode(';', $faculty->research);
+                                    @endphp
+
+                                    @foreach ($researchItems as $item)
+                                        <li class="list-group-item d-flex justify-content-between align-items-center position-relative">
+                                            <div class="position-absolute top-2 mt-3 start-2 mx-4">
+                                                <p class="text-center">{{ trim($item) }}</p>
+                                            </div>
+                                            <div class="btn-group" role="group" aria-label="Research Item Actions">
+                                                <button type="button" class="btn btn-danger rounded btn-sm mx-2">Delete</button>
+                                                <button type="button" class="btn btn-primary rounded btn-sm">Edit</button>
+                                            </div>
+                                        </li>
+                                    @endforeach
                                 </ol>
                                 <hr class="text-white">
-                                <!-- Modal with updated id -->
+                                <!-- Modal Research -->
                                 <div class="modal fade" id="research_modal" tabindex="-1" aria-labelledby="researchModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="researchModalLabel">New research</h1>
+                                                <h1 class="modal-title fs-5" id="researchModalLabel">Add Research Interest</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form>
-                                                <div class="mb-3">
-                                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
-                                                    <input type="text" class="form-control" id="recipient-name">
-                                                </div>
-                                                <div class="mb-3">
-                                                    <label for="message-text" class="col-form-label">Message:</label>
-                                                    <textarea class="form-control" id="message-text"></textarea>
-                                                </div>
+                                                <form action="{{ route('update.research', ['id' => $faculty->facultyid]) }}" method="POST">
+                                                    @csrf
+                                                    <div class="mb-3">
+                                                        <div class="mb3">
+                                                            <label for="recipient-name" class="col-form-label">Research Interest:</label>
+                                                            <input type="text" class="form-control mb-3" id="research" name="research">
+                                                        </div>
+                                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                                    </div>
                                                 </form>
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                <button type="button" class="btn btn-primary">Send message</button>
                                             </div>
                                         </div>
                                     </div>

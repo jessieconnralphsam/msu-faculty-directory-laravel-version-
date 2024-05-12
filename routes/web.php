@@ -31,19 +31,33 @@ Route::get('/profile-edit', function () {
     }
 });
 
-
+//search
 Route::get('/search', 'App\Http\Controllers\FacultyController@search')->name('search');
 
+//college
 Route::get('/college/{collegeId}', [CollegeController::class, 'show'])->name('college.show');
 
+//individual profile
 Route::get('/profile/{profileId}', [ProfileController::class, 'show'])->name('profile.show');
 
+//update faculty information
+
 Route::post('/update-faculty/{id}', 'App\Http\Controllers\FacultyUpdateController@update')->name('update.faculty');
+
+//update faculty research information [naka base ang session sa email]
 
 Route::post('/update-research/{id}', 'App\Http\Controllers\FacultyResearchController@updateResearch')->name('update.research');
 
 Route::delete('/delete-research/{id}/{research}', 'App\Http\Controllers\FacultyResearchController@deleteResearch')->name('delete.research');
 
+//update faculty education information [naka base ang session sa email]
+
 Route::post('/update-education/{id}', 'App\Http\Controllers\FacultyEducationController@updateEducation')->name('update.education');
 
 Route::delete('/delete-education/{id}/{education}', 'App\Http\Controllers\FacultyEducationController@deleteEducation')->name('delete.education');
+
+// update faculty specialization information [naka base ang session sa email]
+
+Route::post('/update-specialization/{id}', 'App\Http\Controllers\FacultySpecializationController@updateSpecialization')->name('update.specialization');
+
+Route::delete('/delete-specialization/{id}/{specialization}', 'App\Http\Controllers\FacultySpecializationController@deleteSpecialization')->name('delete.specialization');

@@ -85,7 +85,7 @@
                                     <div class="mt-3 col-2 col-1 col-md-1">
                                     </div>
                                     <div class="col-1 col-md-1">
-                                        <i class="fa fa-plus-square fa-2x mt-3" aria-hidden="true"></i>
+                                        <i class="fa fa-plus-square fa-2x mt-3 icon-cursor" aria-hidden="true" data-bs-toggle="modal" data-bs-target="#research_modal" data-bs-whatever="@mdo"></i>
                                     </div>
                                 </div>
                                 <ol class="list-group list-group-numbered">
@@ -94,6 +94,34 @@
                                     <li class="list-group-item">A list item</li>
                                 </ol>
                                 <hr class="text-white">
+                                <!-- Modal with updated id -->
+                                <div class="modal fade" id="research_modal" tabindex="-1" aria-labelledby="researchModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h1 class="modal-title fs-5" id="researchModalLabel">New research</h1>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <form>
+                                                <div class="mb-3">
+                                                    <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                                    <input type="text" class="form-control" id="recipient-name">
+                                                </div>
+                                                <div class="mb-3">
+                                                    <label for="message-text" class="col-form-label">Message:</label>
+                                                    <textarea class="form-control" id="message-text"></textarea>
+                                                </div>
+                                                </form>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Send message</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                         <div class="col col-12 col-md-12">

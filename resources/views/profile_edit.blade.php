@@ -56,7 +56,6 @@
                             </div>
                             <div class="col">
                                 <div class="container">
-                                    {{ $faculty->photo }}
                                     <h3 class="text-center text-maroon mt-2 mb-2">{{ $faculty->last_name }}, {{ $faculty->first_name }} {{ $faculty->suffix }} {{ $faculty->middle_name }}</h3>
                                     <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$faculty->rank]}}</p>
                                     <p class="text-maroon">highest educational attainment</p>

@@ -318,7 +318,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="col custom-column">
                             <div class="container-custom">
                                 <h3 class="maroontext"><strong>${facultyName}</strong></h3>
-                                <h5 class="mt-0"><span class="modaltext-two"><strong>${collegeName}</strong></span><span class="fw-lighter modaltext-two">, ${departmentNewName}</span></h5>
+                                <h5 class="mt-0"><span class="modaltext-two"><strong>${rank}</strong></span><span class="modaltext-two">, ${collegeName}</span><span class="fw-lighter modaltext-two">, ${departmentNewName}</span></h5>
                                 <hr>
 
                                 <!-- change data when cleansing done (data separate with ;) -->
@@ -346,7 +346,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const facultyName = facultyInfo.name || 'No data';
             const facultyPhoto = facultyInfo.photo;
             const college = facultyInfo.college || 'No data';
-
+            const rank = facultyInfo.rank || 'Unkown Rank';
             switch (college) {
                 case 'College of Agriculture':
                     var collegeName = 'COA';
@@ -408,7 +408,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         <div class="col custom-column">
                             <div class="container-custom">
                                 <h3 class="maroontext"><strong>${facultyName}</strong></h3>
-                                <h5 class="mt-0"><span class="modaltext-two">${collegeName}</span><span class="fw-lighter modaltext-two">, ${departmentNewName}</span></h5>
+                                <h5 class="mt-0"><span class="modaltext-two"><strong>${rank}</strong></span><span class="modaltext-two">,${collegeName}</span><span class="fw-lighter modaltext-two">, ${departmentNewName}</span></h5>
                                 <hr>
                                 <h5 class="modaltext-two mt-0"><strong>Highest Educational Attainment:</strong> ${education}<span class="modalspan"></span></h5>
                                 <h5 class="modaltext-two mt-0"><strong>Specializations:</strong><span class="modalspan"> ${NewSpecializations}</span></h5>

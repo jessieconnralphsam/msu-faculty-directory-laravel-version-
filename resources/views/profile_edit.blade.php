@@ -58,7 +58,17 @@
                                 <div class="container">
                                     <h3 class="text-center text-maroon mt-2 mb-2">{{ $faculty->last_name }}, {{ $faculty->first_name }} {{ $faculty->suffix }} {{ $faculty->middle_name }}</h3>
                                     <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$faculty->rank]}}</p>
-                                    <p class="text-maroon">highest educational attainment</p>
+                                    @if($faculty->education)
+                                        @php
+                                            $educationArray = explode(';', $faculty->education);
+                                            $firstEducation = reset($educationArray);
+                                        @endphp
+
+                                        <p class="text-maroon">{{$firstEducation}}</p>
+                                    @else
+                                        <!-- no data available display [optional] -->
+                                        <p class="text-maroon"></p> 
+                                    @endif
                                     <p class="text-center text-maroon mt-2 mb-2">{{ $faculty->status }}</p>
                                     <small class="mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $faculty->email }}</small><br>
                                     <small class="mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $faculty->department->department_name }}</small><br>
@@ -175,7 +185,7 @@
                                                         <div class="col">
                                                         </div>
                                                         <div class="col">
-                                                            <form action="#">
+                                                            <form action="{{ route('delete.education', ['id' => $faculty->facultyid, 'education' => $educ_item]) }}" method="POST">
                                                                 @csrf
                                                                 @method('DELETE')
                                                                 <button type="submit" class="btn btn-danger">Delete</button>

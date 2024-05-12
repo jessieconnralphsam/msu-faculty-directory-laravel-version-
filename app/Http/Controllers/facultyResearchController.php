@@ -16,7 +16,7 @@ class FacultyResearchController extends Controller
             $faculty->research = $newResearch;
             $faculty->save();
 
-            return redirect()->back()->with('success', 'Research interest updated successfully.');
+            return redirect()->back()->with('success', ' Research updated successfully.');
         }
 
         return redirect()->back()->with('error', 'Faculty not found.');

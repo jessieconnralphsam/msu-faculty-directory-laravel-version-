@@ -16,7 +16,29 @@ class facultyEducationController extends Controller
             $faculty->education = $newEducation;
             $faculty->save();
 
-            return redirect()->back()->with('success', 'Research interest updated successfully.');
+            return redirect()->back()->with('success', 'Education updated successfully.');
+        }
+
+        return redirect()->back()->with('error', 'Faculty not found.');
+    }
+
+
+    public function deleteEducation($id, $education)
+    {
+        $faculty = Faculty::find($id); 
+
+        if ($faculty) {
+
+            $educationArray = explode(';', $faculty->education);
+
+            $educationArray = array_diff($educationArray, [$education]);
+
+            $updatedEducation = implode(';', $educationArray);
+
+            $faculty->education = $updatedEducation;
+            $faculty->save();
+
+            return redirect()->back()->with('success', 'Education item deleted successfully.');
         }
 
         return redirect()->back()->with('error', 'Faculty not found.');

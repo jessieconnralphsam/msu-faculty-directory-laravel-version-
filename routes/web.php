@@ -34,7 +34,6 @@ Route::get('/profile-edit', function () {
 
 Route::get('/search', 'App\Http\Controllers\FacultyController@search')->name('search');
 
-
 Route::get('/college/{collegeId}', [CollegeController::class, 'show'])->name('college.show');
 
 Route::get('/profile/{profileId}', [ProfileController::class, 'show'])->name('profile.show');
@@ -43,3 +42,4 @@ Route::post('/update-faculty/{id}', 'App\Http\Controllers\FacultyUpdateControlle
 
 Route::post('/update-research/{id}', 'App\Http\Controllers\FacultyResearchController@updateResearch')->name('update.research');
 
+Route::delete('/delete-research/{id}/{research}', 'App\Http\Controllers\FacultyResearchController@deleteResearch')->name('delete.research');

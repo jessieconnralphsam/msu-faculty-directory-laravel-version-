@@ -7,6 +7,8 @@
 env: encrypted
 
 php artisan migrate: migrate [table for session]
-php artisan storage:link [use photo in storage]
+php artisan storage:link [use photo in storage] ->  secure image storage
+
+route: /profile-edit [temporary profile edit session:email]
 
 

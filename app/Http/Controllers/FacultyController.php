@@ -16,7 +16,4 @@ class FacultyController extends Controller
         return view('search_results', compact('results'));
     }
 
-    
-    
-
 }

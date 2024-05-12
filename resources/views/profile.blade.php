@@ -16,11 +16,51 @@
                         <div class="container bg-white rounded shadow">
                             <div>
                                 <div class="col" style="display: flex;justify-content: center;">
-                                    <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid align-middle mt-2 mb-2" alt="...">
+                                    @if($profile->photo)
+                                        <img src="{{ asset(trim($profile->photo)) }}" class="rounded img-fluid align-middle mt-2 mb-2" alt="...">
+                                    @else
+                                        <img src="{{ asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid align-middle mt-2 mb-2" alt="...">
+                                    @endif
                                 </div>
                                 <div class="col">
-                                    <p class="fw-bolder fs-sm text-center"><strong>Contact Information</strong></p>
-                                    <p class="fw-lighter fs-sm text-center mb-3"><i class="fa fa-envelope"></i> {{ $profile->email }}</p>
+                                    <div class="container">
+                                        @php
+                                            $rankMap = [
+                                                "LECT   " => "Lecturer",
+                                                "PROF1  " => "Professor",
+                                                "PROF2  " => "Professor",
+                                                "PROF3  " => "Professor",
+                                                "PROF4  " => "Professor",
+                                                "PROF5  " => "Professor",
+                                                "PROF6  " => "Professor",
+                                                "MTEACH2" => "Master Teacher",
+                                                "TEACH1 " => "Teacher",
+                                                "TEACH2 " => "Teacher",
+                                                "TEACH3 " => "Teacher",
+                                                "ASTPRO1" => "Assistant Professor",
+                                                "ASTPRO3" => "Assistant Professor",
+                                                "ASTPRO4" => "Assistant Professor",
+                                                "ASOPRO1" => "Associate Professor",
+                                                "ASOPRO2" => "Associate Professor",
+                                                "ASOPRO3" => "Associate Professor",
+                                                "ASOPRO4" => "Associate Professor",
+                                                "ASOPRO5" => "Associate Professor",
+                                                "INST1  " => "Instructor",
+                                                "INST2  " => "Instructor",
+                                                "INST3  " => "Instructor"
+                                            ];
+                                        @endphp
+                                        <h3 class="text-center text-maroon mt-2 mb-2">{{ $profile->last_name }}, {{ $profile->first_name }} {{ $profile->suffix }} {{ $profile->middle_name }}</h3>
+                                        <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$profile->rank]}}</p>
+                                        <p class="text-center text-maroon">highest educational attainment</p>
+                                        <small class="mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $profile->email }}</small><br>
+                                        <small class="mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $profile->department->department_name }}</small><br>
+                                        <small class="mt-4 mb-5"><i class="fa-solid fa-building-columns"></i> {{ $profile->college->college_name }}</small><br>
+                                        <small class="mt-3 mb-5"><strong>Google Scholar Link:</strong> {{ $profile->google_scholar_link }}</small><br>
+                                        <small class="mt-3 mb-5"><strong>Specialization:</strong> No Data</small><br>
+                                        <small class="mt-3 mb-5"><strong>Research Interest:</strong> No Data</small><br>
+                                        <hr class="text-white">
+                                    </div>
                                 </div>
                             </div>
                         </div>

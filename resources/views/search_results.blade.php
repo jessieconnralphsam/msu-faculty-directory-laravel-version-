@@ -18,8 +18,7 @@
                                                            "department" => $result->department->department_name,
                                                            "college" => $result->college->college_name,
                                                            "specialization" => $result->specialization,
-                                                           "no_photo" => asset("img/660f6e5997de4_def.jpg"),
-                                                           "photo" => asset($photoPath),
+                                                           "photo" => $result->photo ? asset($photoPath) : asset('img/660f6e5997de4_def.jpg'), 
                                                            "id" => $result->facultyid]) }}'>
                             <div class="container py-2 bg-white rounded custom-container border">
                                 <img src="{{ $result->photo ? asset($photoPath) : asset('img/660f6e5997de4_def.jpg') }}" class="rounded img-fluid" alt="...">

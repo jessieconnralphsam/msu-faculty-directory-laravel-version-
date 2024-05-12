@@ -50,19 +50,26 @@
                             </div>
                         </div>
                         <hr>
-                        <img src="{{ $faculty->photo }}" class="img-fluid-profile rounded mx-auto d-block" alt="...">
-                        <h3 class="text-center text-maroon mt-2 mb-2">{{ $faculty->last_name }}, {{ $faculty->first_name }} {{ $faculty->suffix }} {{ $faculty->middle_name }}</h3>
-                        <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$faculty->rank]}}</p>
-                        <p class="text-maroon">highest educational attainment</p>
-                        <p class="text-center text-maroon mt-2 mb-2">{{ $faculty->status }}</p>
-                        <div class="container">
-                            <small class="mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $faculty->email }}</small><br>
-                            <small class="mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $faculty->department->department_name }}</small><br>
-                            <small class="mt-4 mb-5"><i class="fa-solid fa-building-columns"></i> {{ $faculty->college->college_name }}</small><br>
-                            <small class="mt-3 mb-5"><strong>Google Scholar Link:</strong> No Data</small><br>
-                            <small class="mt-3 mb-5"><strong>Specialization:</strong> No Data</small><br>
-                            <small class="mt-3 mb-5"><strong>Research Interest:</strong> No Data</small><br>
-                            <hr class="text-white">
+                        <div class="row">
+                            <div class="col">
+                                <img src="{{ $faculty->photo }}" class="img-fluid-profile rounded mx-auto d-block" alt="...">
+                            </div>
+                            <div class="col">
+                                <div class="container">
+                                    {{ $faculty->photo }}
+                                    <h3 class="text-center text-maroon mt-2 mb-2">{{ $faculty->last_name }}, {{ $faculty->first_name }} {{ $faculty->suffix }} {{ $faculty->middle_name }}</h3>
+                                    <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$faculty->rank]}}</p>
+                                    <p class="text-maroon">highest educational attainment</p>
+                                    <p class="text-center text-maroon mt-2 mb-2">{{ $faculty->status }}</p>
+                                    <small class="mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $faculty->email }}</small><br>
+                                    <small class="mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $faculty->department->department_name }}</small><br>
+                                    <small class="mt-4 mb-5"><i class="fa-solid fa-building-columns"></i> {{ $faculty->college->college_name }}</small><br>
+                                    <small class="mt-3 mb-5"><strong>Google Scholar Link:</strong> {{ $faculty->google_scholar_link }}</small><br>
+                                    <small class="mt-3 mb-5"><strong>Specialization:</strong> No Data</small><br>
+                                    <small class="mt-3 mb-5"><strong>Research Interest:</strong> No Data</small><br>
+                                    <hr class="text-white">
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

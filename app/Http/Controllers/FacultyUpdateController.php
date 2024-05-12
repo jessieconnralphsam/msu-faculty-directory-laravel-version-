@@ -24,6 +24,7 @@ class FacultyUpdateController extends Controller
             'middle_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'suffix' => 'required|string|max:255',
+            'scholar' => 'required|string|max:255',
             'photo' => 'nullable|image|mimes:jpeg|max:2048', // Allow photo to be nullable
         ]);
 
@@ -31,6 +32,7 @@ class FacultyUpdateController extends Controller
             'first_name' => $request->input('first_name'),
             'middle_name' => $request->input('middle_name'),
             'last_name' => $request->input('last_name'),
+            'google_scholar_link' => $request->input('scholar'),
             'suffix' => $request->input('suffix'),
         ];
 

@@ -286,7 +286,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     var collegeName = 'Ba&A';
                     break;
             }
-
+            
             const facultyPhoto = facultyInfo.photo;
             const noPhoto = facultyInfo.no_photo;
 

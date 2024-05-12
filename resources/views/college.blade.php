@@ -58,9 +58,8 @@
                                 data-faculty-info='{{ json_encode(["name" => $faculty->name,
                                                                    "department" => $faculty->department->department_name,
                                                                    "college" => $faculty->college->college_name,
-                                                                   "specialization" => $faculty->specialization,
-                                                                   "no_photo" => asset($photoPath), 
-                                                                   "photo" => asset($photoPath), 
+                                                                   "specialization" => $faculty->specialization, 
+                                                                   "photo" => $faculty->photo ? asset($photoPath) : asset('img/660f6e5997de4_def.jpg'), 
                                                                    "id" => $faculty->facultyid,
                                                                    "rank" => $rankTitle,
                                                                    ])}}'>

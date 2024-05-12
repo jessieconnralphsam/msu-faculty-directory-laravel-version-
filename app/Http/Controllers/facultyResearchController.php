@@ -27,16 +27,13 @@ class FacultyResearchController extends Controller
         $faculty = Faculty::find($id); 
 
         if ($faculty) {
-            // Split the existing research data by ';' to create an array
+
             $researchArray = explode(';', $faculty->research);
 
-            // Remove the specific research item from the array
             $researchArray = array_diff($researchArray, [$research]);
 
-            // Join the remaining data back into a string separated by ';'
             $updatedResearch = implode(';', $researchArray);
 
-            // Update the faculty's research field with the updated data
             $faculty->research = $updatedResearch;
             $faculty->save();
 

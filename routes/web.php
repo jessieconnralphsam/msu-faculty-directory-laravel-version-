@@ -43,3 +43,5 @@ Route::post('/update-faculty/{id}', 'App\Http\Controllers\FacultyUpdateControlle
 Route::post('/update-research/{id}', 'App\Http\Controllers\FacultyResearchController@updateResearch')->name('update.research');
 
 Route::delete('/delete-research/{id}/{research}', 'App\Http\Controllers\FacultyResearchController@deleteResearch')->name('delete.research');
+
+Route::post('/update-education/{id}', 'App\Http\Controllers\FacultyEducationController@updateEducation')->name('update.education');

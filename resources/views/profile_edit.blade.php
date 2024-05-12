@@ -160,9 +160,34 @@
                                     </div>
                                 </div>
                                 <ol class="list-group list-group-numbered">
-                                    <li class="list-group-item">A list item</li>
-                                    <li class="list-group-item">A list item</li>
-                                    <li class="list-group-item">A list item</li>
+                                    @php
+                                        $educationItems = explode(';', $faculty->education);
+                                    @endphp
+
+                                    @if(count($educationItems) > 0)
+                                        @foreach ($educationItems as $educ_item)
+                                            @if( $educ_item)
+                                                <li class="list-group-item d-flex justify-content-between align-items-center position-relative">
+                                                    <div class="position-absolute top-2 mt-3 start-2 mx-4">
+                                                        <p class="text-center">{{ trim($educ_item) }}</p>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col">
+                                                        </div>
+                                                        <div class="col">
+                                                            <form action="#">
+                                                                @csrf
+                                                                @method('DELETE')
+                                                                <button type="submit" class="btn btn-danger">Delete</button>
+                                                            </form>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            @endif
+                                        @endforeach
+                                    @else
+                                        <li class="list-group-item">No research items available.</li>
+                                    @endif
                                 </ol>
                                 <hr class="text-white">
                                 <!-- Modal Research -->
@@ -174,13 +199,13 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body">
-                                                <form action="{{ route('update.research', ['id' => $faculty->facultyid]) }}" method="POST">
+                                                <form action="{{ route('update.education', ['id' => $faculty->facultyid]) }}" method="POST">
                                                     @csrf
                                                     <div class="mb-3">
                                                         <div class="mb3">
                                                             <label for="recipient-name" class="col-form-label">Education:</label><br>
                                                             <small><strong>Note:</strong> First data should be the highest education attainment</small><br>
-                                                            <input type="text" class="form-control mb-3" id="research" name="research">
+                                                            <input type="text" class="form-control mb-3" id="education" name="education">
                                                         </div>
                                                         <button type="submit" class="btn btn-primary">Submit</button>
                                                     </div>

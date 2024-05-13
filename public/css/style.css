@@ -202,3 +202,16 @@ content */
 .icon-cursor{
     cursor: pointer;
 }
+
+/* dean dashboard */
+
+.bg-blue{
+    background-color: #396AFF;
+}
+
+.bg-pink{
+    background-color: #FF82AC;
+}
+.bg-darkgreen{
+    background-color: #16DBCC;
+}

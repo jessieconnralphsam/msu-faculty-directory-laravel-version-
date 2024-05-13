@@ -52,13 +52,31 @@
                                         @endphp
                                         <h3 class="text-center text-maroon mt-2 mb-2">{{ $profile->last_name }}, {{ $profile->first_name }} {{ $profile->suffix }} {{ $profile->middle_name }}</h3>
                                         <p class="text-center text-maroon mt-2 mb-2">{{$rankMap[$profile->rank]}}</p>
-                                        <p class="text-center text-maroon">highest educational attainment</p>
+                                        @if($profile->education)
+                                        @php
+                                            $educationArray = explode(';', $profile->education);
+                                            $firstEducation = reset($educationArray);
+                                        @endphp
+
+                                        <p class="text-center text-maroon">{{$firstEducation}}</p>
+                                        @else
+                                            <!-- no data available display [optional] -->
+                                            <p class="text-maroon"></p> 
+                                        @endif
                                         <small class="mt-2 mb-2"><i class="fa-solid fa-envelope"></i> {{ $profile->email }}</small><br>
                                         <small class="mt-2 mb-2"><i class="fa-solid fa-building"></i> {{ $profile->department->department_name }}</small><br>
                                         <small class="mt-4 mb-5"><i class="fa-solid fa-building-columns"></i> {{ $profile->college->college_name }}</small><br>
                                         <small class="mt-3 mb-5"><strong>Google Scholar Link:</strong> {{ $profile->google_scholar_link }}</small><br>
-                                        <small class="mt-3 mb-5"><strong>Specialization:</strong> No Data</small><br>
-                                        <small class="mt-3 mb-5"><strong>Research Interest:</strong> No Data</small><br>
+                                        @if(empty($profile->specialization))
+                                        <small class="mt-3 mb-5"><strong>Specialization:</strong> No data</small><br>
+                                        @else
+                                            <small class="mt-3 mb-5"><strong>Specialization:</strong> {{ str_replace(';', ',', $profile->specialization) }}</small><br>
+                                        @endif
+                                        @if(empty($profile->research))
+                                        <small class="mt-3 mb-5"><strong>Research Interest:</strong> No data</small><br>
+                                        @else
+                                            <small class="mt-3 mb-5"><strong>Research Interest:</strong> {{ str_replace(';', ',', $profile->research) }}</small><br>
+                                        @endif
                                         <hr class="text-white">
                                     </div>
                                 </div>
@@ -127,7 +145,14 @@
                                 @endphp
                                 <h2 class="profile-text" style="color: #8F0A03;"><strong>{{ $profile->name }}</strong></h2>
                                 <h3 class="mt-0"><span class="fst-normal"><strong>{{$rankMap[$profile->rank]}}</strong>, {{ $profile->department->department_name }} ({{ $deanText }})</span></h3>
-                                <p class="fw-lighter fs-sm mt-2">[Dr.] [Name] is an [Rank] and currently the [chairperson] in the [Department]. [She] publishes research about lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vestibulum quam lorem, sed scelerisque massa venenatis id. Nulla congue elementum augue, quis gravida massa fermentum quis.</p>
+                                <p class="fw-lighter fs-sm mt-2">
+                                    I'm {{ $profile->first_name }}, {{ $profile->last_name }}, an {{ $rankMap[$profile->rank] }} at Mindanao State University-General Santos. My expertise lies in
+                                    @if(!empty($profile->specialization))
+                                        {{ str_replace(';', ', ', $profile->specialization) }}
+                                    @else
+                                        No data
+                                    @endif, which I teach in the {{ $profile->department->department_name }} within the {{ $profile->college->college_name }}. I hold a {{ $profile->education }} and am actively involved in research areas such as {{ $profile->research }}. You can find more about my work on my Google Scholar profile. Feel free to reach out to me at {{ $profile->email }} for any inquiries or collaborations.
+                                </p>
                                 <h3 class="fw-bold mt-4">Specialization</h3>
                                 <p class="fw-lighter fs-sm mt-2">
                                     @if(!empty($profile->specialization))

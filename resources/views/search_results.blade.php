@@ -43,6 +43,7 @@
                                                            "department" => $result->department->department_name,
                                                            "college" => $result->college->college_name,
                                                            "specialization" => $result->specialization,
+                                                           "education" => $result->education,
                                                            "rank" => $rankTitle,
                                                            "photo" => $result->photo ? asset($photoPath) : asset('img/660f6e5997de4_def.jpg'), 
                                                            "id" => $result->facultyid]) }}'>

@@ -382,6 +382,7 @@ document.addEventListener('DOMContentLoaded', function () {
             
             const departmentNewName = facultyInfo.department || 'No data';
             const education = facultyInfo.education || 'No data';
+            const firstEducation = education.split(';')[0].trim();
             const NewSpecializations = facultyInfo.specialization || 'No Data';
             const id = facultyInfo.id;
 
@@ -410,7 +411,7 @@ document.addEventListener('DOMContentLoaded', function () {
                                 <h3 class="maroontext"><strong>${facultyName}</strong></h3>
                                 <h5 class="mt-0"><span class="modaltext-two"><strong>${rank}</strong></span><span class="modaltext-two">,${collegeName}</span><span class="fw-lighter modaltext-two">, ${departmentNewName}</span></h5>
                                 <hr>
-                                <h5 class="modaltext-two mt-0"><strong>Highest Educational Attainment:</strong> ${education}<span class="modalspan"></span></h5>
+                                <h5 class="modaltext-two mt-0"><strong>Highest Educational Attainment:</strong> ${firstEducation}<span class="modalspan"></span></h5>
                                 <h5 class="modaltext-two mt-0"><strong>Specializations:</strong><span class="modalspan"> ${NewSpecializations}</span></h5>
                             </div>
                         </div>

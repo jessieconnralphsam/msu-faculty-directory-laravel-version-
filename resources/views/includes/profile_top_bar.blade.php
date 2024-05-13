@@ -8,7 +8,7 @@
             </div>
     </div>
 </div>
-<div class="shadow-sm bg-body-tertiary">
+<div class="shadow-sm bg-white">
     <div class="container d-flex justify-content-between align-items-center">
         <div class="container d-flex align-items-center">
             <img class="mt-2 mb-2 mx-1" src="{{ asset('img/msu_logo.png') }}" alt="Logo" width="44" height="44">

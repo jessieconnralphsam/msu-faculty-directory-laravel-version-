@@ -31,6 +31,13 @@
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="/"><h3>Home</h3></a>
                             </li>
+                            @if($dean)
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="/dashboard/{{$collegeid}}">
+                                        <h3>Dashboard</h3>
+                                    </a>
+                                </li>
+                            @endif                     
                             <li class="nav-item">
                                 <a class="nav-link active" aria-current="page" href="#"><h3>About</h3></a>
                             </li>

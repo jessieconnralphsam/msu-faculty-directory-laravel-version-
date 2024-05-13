@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CollegeController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Session;
+use App\Models\Faculty;
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,12 +21,35 @@ Route::get('/profile', function () {
 //temporary only! [manual set email]
 //session from the [faculty.msugensan.edu.ph] login
 //maaccess ni sya dapat base sa session from [faculty.msugensan.edu.ph]
+//sample data [for troubleshoot]: juniven.acapulco@msugensan.edu.ph
+//jose.trillo@msugensan.edu.ph
 Route::get('/profile-edit', function () {
-    $email = 'jose.trillo@msugensan.edu.ph'; 
+    $email = 'juniven.acapulco@msugensan.edu.ph';  //change base sa email na naa sa session
 
-    if (!empty($email)) {
+    $id = Faculty::where('email', $email)->first();
+    $collegeid = $id->collegeid;
+    $dean = $id->dean;
+
+    if (!empty($email) && !is_null($collegeid)) {
         Session::put('email', $email);
-        return view('profile_edit', ['email' => $email]); // Pass $email to the view [para magamit ang email]
+        return view('profile_edit', ['email' => $email, 'collegeid' => $collegeid, 'dean' => $dean]);
+    } else {
+        return redirect('/');
+    }
+});
+
+
+//temporary only! [manual set email]
+//session from the [faculty.msugensan.edu.ph] login
+//maaccess ni sya dapat base sa session from [faculty.msugensan.edu.ph] pero dean na
+Route::get('/dashboard/{collegeid}', function ($collegeid) {
+    $email = 'juniven.acapulco@msugensan.edu.ph'; //change base sa email na naa sa session
+
+    $faculty = Faculty::where('email', $email)->where('collegeid', $collegeid)->first();
+
+    if (!empty($email) && $faculty && $faculty->dean === true) {
+        Session::put('email', $email);
+        return view('dashboard', ['email' => $email, 'collegeid' => $collegeid, 'dean'=> $faculty->dean]);
     } else {
         return redirect('/');
     }

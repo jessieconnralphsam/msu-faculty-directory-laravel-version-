@@ -20,11 +20,11 @@ class FacultyUpdateController extends Controller
 
         // Validate name and optionally validate photo
         $request->validate([
-            'first_name' => 'required|string|max:255',
-            'middle_name' => 'required|string|max:255',
-            'last_name' => 'required|string|max:255',
-            'suffix' => 'required|string|max:255',
-            'scholar' => 'required|string|max:255',
+            'first_name' => 'nullable|string|max:255',
+            'middle_name' => 'nullable|string|max:255',
+            'last_name' => 'nullable|string|max:255',
+            'suffix' => 'nullable|string|max:255',
+            'scholar' => 'nullable|string|max:255',
             'photo' => 'nullable|image|mimes:jpeg|max:2048', // Allow photo to be nullable
         ]);
 

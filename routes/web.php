@@ -24,7 +24,7 @@ Route::get('/profile', function () {
 //sample data [for troubleshoot]: juniven.acapulco@msugensan.edu.ph
 //jose.trillo@msugensan.edu.ph
 Route::get('/profile-edit', function () {
-    $email = 'juniven.acapulco@msugensan.edu.ph';  //change base sa email na naa sa session
+    $email = 'jose.trillo@msugensan.edu.ph';  //change base sa email na naa sa session
 
     $id = Faculty::where('email', $email)->first();
     $collegeid = $id->collegeid;
@@ -43,7 +43,7 @@ Route::get('/profile-edit', function () {
 //session from the [faculty.msugensan.edu.ph] login
 //maaccess ni sya dapat base sa session from [faculty.msugensan.edu.ph] pero dean na
 Route::get('/dashboard/{collegeid}', function ($collegeid) {
-    $email = 'juniven.acapulco@msugensan.edu.ph'; //change base sa email na naa sa session
+    $email = 'jose.trillo@msugensan.edu.ph'; //change base sa email na naa sa session
 
     $faculty = Faculty::where('email', $email)->where('collegeid', $collegeid)->first();
 

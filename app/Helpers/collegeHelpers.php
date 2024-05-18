@@ -1,5 +1,7 @@
 <?php
 
+//autoload
+
 if (!function_exists('getRankTitle')) {
     function getRankTitle($rank) {
         $rankMap = [

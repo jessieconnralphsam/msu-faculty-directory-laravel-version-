@@ -36,22 +36,3 @@ if (!function_exists('getRankTitle')) {
         return $rankMap[$rank] ?? 'Unknown Rank';
     }
 }
-
-//map Dean Text
-if (!function_exists('getDeanText')) {
-    function getDeanText($collegeName) {
-        $deanTextMap = [
-            'College of Agriculture' => 'COA',
-            'College of Engineering' => 'COE',
-            'College of Social Sciences and Humanities' => 'CSSH',
-            'College of Medicine' => 'COM',
-            'College of Business Administration and Accountacy' => 'Ba&A',
-            'College of Fisheries' => 'COF',
-            'College of Natural Science and Mathematics' => 'CNSM',
-            'School of Graduate Studies' => 'SGS',
-            'College of Education' => 'CoEd',
-        ];
-
-        return $deanTextMap[$collegeName] ?? 'Ba&A';
-    }
-}

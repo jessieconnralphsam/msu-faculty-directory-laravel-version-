@@ -92,4 +92,21 @@ class Faculty extends Model
     {
         return self::where('email', $email)->first();
     }
+
+    public function getDeanTextAttribute()
+    {
+        $mapping = [
+            'College of Agriculture' => 'COA',
+            'College of Engineering' => 'COE',
+            'College of Social Sciences and Humanities' => 'CSSH',
+            'College of Medicine' => 'COM',
+            'College of Business Administration and Accountacy' => 'Ba&A',
+            'College of Fisheries' => 'COF',
+            'College of Natural Science and Mathematics' => 'CNSM',
+            'School of Graduate Studies' => 'SGS',
+            'College of Education' => 'CoEd',
+        ];
+
+        return $mapping[$this->college->college_name] ?? 'Ba&A';
+    }
 }

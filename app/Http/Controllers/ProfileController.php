@@ -10,6 +10,10 @@ class ProfileController extends Controller
     public function show($profileId)
     {
         $profile = Profile::findOrFail($profileId);
-        return view('profile', ['profile' => $profile]);
+
+        $deanText = getDeanText($profile->college->college_name);
+        $firstEducation = explode(';', $profile->education)[0] ?? 'No data';
+
+        return view('profile', compact('profile', 'deanText', 'firstEducation'));
     }
 }

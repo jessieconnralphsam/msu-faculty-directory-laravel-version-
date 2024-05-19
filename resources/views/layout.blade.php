@@ -13,7 +13,7 @@
         use App\Models\Faculty;
         $rankCounts = Faculty::countRank();
     ?>
-    <!-- passing data from model to javascript [data for charts] -->
+    
     <div id="permaCount" data-count="{{ Faculty::countPermanentfaculty() }}" style="display: none;"></div>
     <div id="casCount" data-count="{{ Faculty::countCasualfaculty() }}" style="display: none;"></div>
     <div id="joCount" data-count="{{ Faculty::countJoborderfaculty() }}" style="display: none;"></div>

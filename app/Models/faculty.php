@@ -24,6 +24,7 @@ class Faculty extends Model
     {
         return $this->belongsTo(College::class, 'collegeid', 'collegeid');
     }
+    
     //department faculty relationship
     public function department()
     {

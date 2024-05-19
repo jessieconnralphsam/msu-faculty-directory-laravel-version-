@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\Profile;
+use App\Services\ProfileService;
 
 class ProfileController extends Controller
 {
+    protected $profileService;
+
+    public function __construct(ProfileService $profileService)
+    {
+        $this->profileService = $profileService;
+    }
+
     public function show($profileId)
     {
-        $profile = Profile::findOrFail($profileId);
-
-        $deanText = getDeanText($profile->college->college_name);
-        $firstEducation = explode(';', $profile->education)[0] ?? 'No data';
-
-        return view('profile', compact('profile', 'deanText', 'firstEducation'));
+        $data = $this->profileService->getProfileData($profileId);
+        return view('profile', $data);
     }
 }

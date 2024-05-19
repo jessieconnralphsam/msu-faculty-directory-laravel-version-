@@ -1,6 +1,8 @@
 <?php
-
-//autoload
+/**
+* Helper Autoload map Rank Title
+*
+*/
 
 if (!function_exists('getRankTitle')) {
     function getRankTitle($rank) {

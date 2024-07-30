@@ -283,7 +283,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     var collegeName = 'CoEd';
                     break;
                 default:
-                    var collegeName = 'Ba&A';
                     break;
             }
             
@@ -376,7 +375,6 @@ document.addEventListener('DOMContentLoaded', function () {
                     var collegeName = 'CoEd';
                     break;
                 default:
-                    var collegeName = 'Ba&A';
                     break;
             }
             
